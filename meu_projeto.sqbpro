@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="meu_projeto.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1043"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title=".Navegáveis" custom_title="0" dock_id="1" table="0,11:Navegáveis"/><dock_state state="000000ff00000000fd0000000100000002000005ab00000396fc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000000005ab0000012400ffffff0000026f0000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1*">-- Criando a tabela
+CREATE TABLE transacoes (
+    id_transacao INTEGER PRIMARY KEY,
+    tipo_transacao TEXT,
+    origem TEXT,
+    destino_transacao TEXT,
+    data DATE,
+    cpf_cnpj_origem TEXT,
+    cpf_cnpj_destino TEXT,
+    valor DECIMAL(10, 2)
+);
+
+-- Inserindo todos os dados
+INSERT INTO transacoes (id_transacao, tipo_transacao, origem, destino_transacao, data, cpf_cnpj_origem, cpf_cnpj_destino, valor) VALUES
+(1, 'Pix', 'eduardo', 'buteco do matias', '2025-09-20', '168.379.400-87', '90.295.978/0001-10', 100.00),
+(2, 'TED', 'mariana', 'Loja de Eletronicos XP', '2025-08-04', '357.649.930-08', '53.494.379/0001-08', 200.00),
+(3, 'DOC', 'mauricio', 'carlos', '2025-05-14', '122.985.950-03', '258.403.760-27', 700.00);
+
+INSERT INTO transacoes (tipo_transacao, origem, destino_transacao, data, cpf_cnpj_origem, cpf_cnpj_destino, valor) VALUES
+('Pix', 'carlos', 'eduardo', '2025-09-15', '258.403.760-27', '168.379.400-87', 50.00),
+('TED', 'empresa_a', 'mariana', '2025-09-01', '11.222.333/0001-44', '357.649.930-08', 2500.00),
+('Pix', 'eduardo', 'Loja de Eletronicos XP', '2025-09-18', '168.379.400-87', '53.494.379/0001-08', 350.00),
+('DOC', 'mariana', 'mauricio', '2025-09-19', '357.649.930-08', '122.985.950-03', 150.00);</sql><current_tab id="0"/></tab_sql></sqlb_project>
